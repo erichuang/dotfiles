@@ -3,7 +3,7 @@
 
 ## Configuration
 
-Edit the [config.yml](https://github.com/erichuang/dotfiles/blob/config.yml) file.
+Edit the [config.yml](https://github.com/erichuang/dotfiles/blob/master/config.yml) file.
 
 
 ## Building (without installation)
