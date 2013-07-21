@@ -1,0 +1,4 @@
+[extensions]
+hgk =
+hgext.hgk =
+mq =

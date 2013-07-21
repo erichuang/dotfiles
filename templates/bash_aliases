@@ -1,0 +1,13 @@
+alias l='ls --color -lF'
+alias la='l -a'
+alias rm='rm -i'
+alias mkdir='mkdir -p'
+alias less='less -r'
+alias ..='cd ../'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias ack='ack-grep'
+alias tarc='tar -zcf'
+alias tarx='tar -zxf'
+alias t='tail -F -n 100'
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"

@@ -1,0 +1,40 @@
+[user]
+  email = <%= @config[:email] %>
+  name = <%= @config[:full_name] %>
+[color]
+  ui = auto
+  decorate = short
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore
+[merge]
+  tool = kdiff3
+#  tool = extMerge
+#[mergetool "extMerge"]
+#  cmd = extMerge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+#  trustExitCode = false
+#[diff]
+#  external = extDiff
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  amend = commit --amend
+  st = status
+  di = diff --color-words
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  log1 = log --abbrev-commit --pretty=oneline
+  stash-unapply = !git stash show -p | git apply -R
+  out = !git fetch && git log FETCH_HEAD..
+  in = !git fetch && git log ..FETCH_HEAD
+[apply]
+  whitespace = nowarn
+[push]
+  default = simple
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master
+[github]
+  user = <%= @config[:github][:user] %>
+  token = <%= @config[:github][:token] %>

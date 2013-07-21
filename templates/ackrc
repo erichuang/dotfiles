@@ -1,0 +1,10 @@
+--pager
+less -r
+
+--type-add=css=.sass,.scss,.less,.styl
+--type-add=html=.haml
+--type-add=ruby=.ru
+--type-set=coffee=.coffee
+
+--ignore-dir=node_modules/
+

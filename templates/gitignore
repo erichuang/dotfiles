@@ -1,0 +1,20 @@
+# RVM and rbenv
+/.rvmrc
+/.rbenv-version
+
+# YARD
+/.yardoc
+
+# Eclipse
+/.project
+/.pydevproject
+
+# Python
+*.pyc
+
+# Misc
+/tmp
+*~
+.*.swp
+.svn
+.DS_Store

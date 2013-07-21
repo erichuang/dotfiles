@@ -1,0 +1,48 @@
+set nocompatible
+
+syntax on
+filetype plugin indent on
+
+set nobackup
+set noswapfile
+
+set history=10000
+
+" command-line completion (for filenames, help topics, option names)
+" first list the available options and complete the longest common part, then
+" have further s cycle through the possibilities
+set wildmode=list:longest,full
+
+" cause the cursor to very briefly jump to a brace/parenthese/bracket's match
+" whenever a closing or opening brace/parenthese/bracket is typed
+set showmatch
+
+" make searches case-insensitive, unless they contain upper-case letters
+set ignorecase
+set smartcase
+
+" highlight search terms
+set hlsearch
+" show the best match so far as a search term is typed
+set incsearch
+
+" briefly flashes the screen instead of making beeps when a command doesn't work
+set vb t_vb=
+
+set shiftwidth=2
+set shiftround
+set expandtab
+set tabstop=2
+set autoindent
+set smartindent
+colorscheme murphy
+set gfn=Bitstream_Vera_Sans_Mono:h8:cANSI
+
+set wildignore=*.swp,*.bak,*.pyc,*.class
+set title
+set visualbell
+set noerrorbells
+
+set pastetoggle=<F2>
+
+"set number
