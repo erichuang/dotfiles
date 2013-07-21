@@ -43,11 +43,13 @@ task :config do
   @config = YAML.load_file(File.expand_path('../config.yml', __FILE__))
 end
 
-task :dots do
+desc 'build'
+task :build => [:config] do
   system %Q{mkdir #{BUILD_DIR} -p}
   Dir["#{TEMPLATE_DIR}/*"].each { |f| build_dot(f) }
-  Dir["#{BUILD_DIR}/*"].each { |f| install_dot(f) }
 end
 
-desc "install the dot files into user's home directory"
-task :install => [:config, :dots]
+desc 'install'
+task :install => [:build] do
+  Dir["#{BUILD_DIR}/*"].each { |f| install_dot(f) }
+end
