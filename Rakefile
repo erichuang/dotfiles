@@ -16,7 +16,7 @@ def build_dot(file)
     end
   else
     out_file = File.expand_path("../#{BUILD_DIR}/#{file_name}", __FILE__)
-    system %Q{cp #{file} #{out_file}}
+    cp file, out_file
   end
 end
 
@@ -34,7 +34,7 @@ def install_dot(file)
     end
   else
     puts "Linking #{out_file}"
-    system %Q{ln -s "$PWD/#{file}" "#{out_file}"}
+    ln_s File.expand_path("../#{file}", __FILE__), out_file
   end
 end
 
@@ -45,7 +45,7 @@ end
 
 desc 'build'
 task :build => [:config] do
-  system %Q{mkdir #{BUILD_DIR} -p}
+  mkdir_p BUILD_DIR
   Dir["#{TEMPLATE_DIR}/*"].each { |f| build_dot(f) }
 end
 
