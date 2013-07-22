@@ -23,14 +23,12 @@ end
 def install_dot(file)
   file_name = File.basename(file)
   out_file = File.join(ENV['HOME'], ".#{file_name}")
-  if File.exists?(out_file)
-    if File.symlink?(out_file)
-      puts "Skipping #{out_file}"
-    else
-      puts "Appending to #{out_file}"
-      File.open(out_file, 'a') do |f|
-        f.write(File.read(file))
-      end
+  if File.symlink?(out_file)
+    puts "Skipping #{out_file}"
+  elsif File.file?(out_file)
+    puts "Appending to #{out_file}"
+    File.open(out_file, 'a') do |f|
+      f.write(File.read(file))
     end
   else
     puts "Linking #{out_file}"
