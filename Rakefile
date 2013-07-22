@@ -24,7 +24,7 @@ def install_dot(file)
   file_name = File.basename(file)
   out_file = File.join(ENV['HOME'], ".#{file_name}")
   if File.exists?(out_file)
-    if File.lstat(out_file).symlink?
+    if File.symlink?(out_file)
       puts "Skipping #{out_file}"
     else
       puts "Appending to #{out_file}"
