@@ -1,30 +1,21 @@
 # Colours
-export COLOUR_NC='\e[0m' # No Colour
-export COLOUR_WHITE='\e[1;37m'
-export COLOUR_BLACK='\e[0;30m'
-export COLOUR_BLUE='\e[0;34m'
-export COLOUR_LIGHT_BLUE='\e[1;34m'
-export COLOUR_GREEN='\e[0;32m'
-export COLOUR_LIGHT_GREEN='\e[1;32m'
-export COLOUR_CYAN='\e[0;36m'
-export COLOUR_LIGHT_CYAN='\e[1;36m'
-export COLOUR_RED='\e[0;31m'
-export COLOUR_LIGHT_RED='\e[1;31m'
-export COLOUR_PURPLE='\e[0;35m'
-export COLOUR_LIGHT_PURPLE='\e[1;35m'
-export COLOUR_BROWN='\e[0;33m'
-export COLOUR_YELLOW='\e[1;33m'
-export COLOUR_GRAY='\e[1;30m'
-export COLOUR_LIGHT_GRAY='\e[0;37m'
+function prompt {
+  local WHITE="\[\033[1;37m\]"
+  local GREEN="\[\033[0;32m\]"
+  local CYAN="\[\033[0;36m\]"
+  local GRAY="\[\033[0;37m\]"
+  local BLUE="\[\033[0;34m\]"
+  local LIGHT_RED="\[\033[1;31m\]"
+  export PS1="${CYAN}\w${GRAY} \$(__git_ps1 '(%s)')${GRAY}$ "
+}
+prompt
 export LS_COLORS='di=1;94:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=4:*.php=90'
 export CLICOLOUR=1 
-export PS1="[\[${COLOUR_GREEN}\]$(hostname)\[${COLOUR_NC}\]]\[${COLOUR_WHITE}\]\w> \[${COLOUR_NC}\]"
 
 # Bash
 shopt -s checkwinsize # After each command, checks the windows size and changes lines and columns
 source $HOME/.git-completion.bash # Git bash completion
 source $HOME/.git-prompt.sh # Git command line
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'
 export HISTSIZE=100000
 export HISTFILESIZE=100000000
 export HISTCONTROL=ignoreboth
