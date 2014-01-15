@@ -11,3 +11,7 @@ alias tarc='tar -zcf'
 alias tarx='tar -zxf'
 alias t='tail -F -n 100'
 alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print \$1'"
+alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias flushdns="dscacheutil -flushcache"
+
