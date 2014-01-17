@@ -20,3 +20,7 @@ The generated files are placed in the build/ directory.
 ```terminal
 rake install
 ```
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/erichuang/dotfiles/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
